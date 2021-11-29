@@ -22,3 +22,11 @@
  - CABasicAnimation, CALayer, CAKeyframeAnimationCAAnimationGroup, CAShapeLayer
  - UIBezierPath, UIViewPropertyAnimator
 
+Работа с сетью:
+ - NotificationCenter
+ - URLSession
+ - Alamofire
+ - JSONSerialization
+ - Codable
+ - Realm
+ - Realm Notifications
