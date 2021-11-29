@@ -18,9 +18,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTitleLabel: UILabel!
     
     var interactiveAnimator: UIViewPropertyAnimator!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         titleLabel.text = "Авторизация"
         
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan(_:)))
@@ -37,29 +38,29 @@ class LoginViewController: UIViewController {
     
     @objc func onPan(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
-            case .began:
-                interactiveAnimator?.startAnimation()
-                
-                interactiveAnimator = UIViewPropertyAnimator(duration: 0.5,
-                                                             dampingRatio: 0.5,
-                                                             animations: {
-                                                                self.loginButton.transform = CGAffineTransform(translationX: 0,
-                                                                                                              y: 150)
-                                                             })
-                
-                interactiveAnimator.pauseAnimation()
-            case .changed:
-                let translation = recognizer.translation(in: self.view)
-                interactiveAnimator.fractionComplete = translation.y / 100
-            case .ended:
-                interactiveAnimator.stopAnimation(true)
-                
-                interactiveAnimator.addAnimations {
-                    self.loginButton.transform = .identity
-                }
-                
-                interactiveAnimator.startAnimation()
-            default: return
+        case .began:
+            interactiveAnimator?.startAnimation()
+            
+            interactiveAnimator = UIViewPropertyAnimator(duration: 0.5,
+                                                         dampingRatio: 0.5,
+                                                         animations: {
+                self.loginButton.transform = CGAffineTransform(translationX: 0,
+                                                               y: 150)
+            })
+            
+            interactiveAnimator.pauseAnimation()
+        case .changed:
+            let translation = recognizer.translation(in: self.view)
+            interactiveAnimator.fractionComplete = translation.y / 100
+        case .ended:
+            interactiveAnimator.stopAnimation(true)
+            
+            interactiveAnimator.addAnimations {
+                self.loginButton.transform = .identity
+            }
+            
+            interactiveAnimator.startAnimation()
+        default: return
         }
     }
     
@@ -101,15 +102,15 @@ class LoginViewController: UIViewController {
                 UIView.addKeyframe(withRelativeStartTime: 0,
                                    relativeDuration: 0.5,
                                    animations: {
-                                    self.loginTitleLabel.transform = CGAffineTransform(translationX: 150, y: 50)
-                                    self.passwordTitleLabel.transform = CGAffineTransform(translationX: -150, y: -50)
-                                   })
+                    self.loginTitleLabel.transform = CGAffineTransform(translationX: 150, y: 50)
+                    self.passwordTitleLabel.transform = CGAffineTransform(translationX: -150, y: -50)
+                })
                 UIView.addKeyframe(withRelativeStartTime: 0.5,
                                    relativeDuration: 0.5,
                                    animations: {
-                                    self.loginTitleLabel.transform = .identity
-                                    self.passwordTitleLabel.transform = .identity
-                                   })
+                    self.loginTitleLabel.transform = .identity
+                    self.passwordTitleLabel.transform = .identity
+                })
             }, completion: nil
         )
     }
@@ -119,12 +120,12 @@ class LoginViewController: UIViewController {
         let animator = UIViewPropertyAnimator(duration: 1,
                                               dampingRatio: 0.5,
                                               animations: {
-                                                self.titleLabel.transform = .identity
-                                              })
+            self.titleLabel.transform = .identity
+        })
         animator.startAnimation(afterDelay: 1)
     }
-
-
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -136,7 +137,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onButtonTapped(_ sender: Any) {
-       
+        
     }
     
     @IBAction func backToLogin(unwindSegue: UIStoryboardSegue) {}
@@ -177,30 +178,30 @@ class LoginViewController: UIViewController {
                                          left: 0.0,
                                          bottom: kbSize.height,
                                          right: 0.0)
-
+        
         self.scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
     }
     
-@objc func keyboardWillBeHidden(notification: Notification) {
-    let contentInsets = UIEdgeInsets.zero
-    scrollView?.contentInset = contentInsets
-}
-
+    @objc func keyboardWillBeHidden(notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView?.contentInset = contentInsets
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardWasShown),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
-
+        
         NotificationCenter.default.addObserver(self,
                                                selector:#selector(self.keyboardWillBeHidden(notification:)),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self,
@@ -210,7 +211,7 @@ class LoginViewController: UIViewController {
                                                   name: UIResponder.keyboardWillHideNotification,
                                                   object: nil)
     }
-
+    
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }

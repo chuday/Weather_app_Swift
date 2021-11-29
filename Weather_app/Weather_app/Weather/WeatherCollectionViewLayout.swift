@@ -8,8 +8,8 @@
 import UIKit
 
 class WeatherCollectionViewLayout: UICollectionViewLayout {
-    var cacheAttributes = [IndexPath: UICollectionViewLayoutAttributes]()
     
+    var cacheAttributes = [IndexPath: UICollectionViewLayoutAttributes]()
     var columnsCount = 2
         
     private var totalCellsHeight: CGFloat = 0

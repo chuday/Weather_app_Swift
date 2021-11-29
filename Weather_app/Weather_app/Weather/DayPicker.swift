@@ -7,8 +7,7 @@
 
 import UIKit
 
-//@IBDesignable
-class DayPicker: UIControl {
+@IBDesignable class DayPicker: UIControl {
     
     var buttons: [UIButton] = []
     var stackView: UIStackView!
