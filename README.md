@@ -1,4 +1,4 @@
-# Weather_app ( Swift )
+# Weather_app (Swift)
 
 В проекте применены: 
 
