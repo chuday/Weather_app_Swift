@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="gTV-IL-0wX" customClass="WeatherCollectionViewCell" customModule="Weather_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="171" height="162"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="171" height="162"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpu-Pr-x9m" customClass="ViewWithShadow" customModule="Weather_app" customModuleProvider="target">
+                        <rect key="frame" x="26.5" y="22" width="118" height="118"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgo-jL-u5l" customClass="CircleView" customModule="Weather_app" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhK-uA-Ogv">
+                                        <rect key="frame" x="39" y="44" width="40" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="QhK-uA-Ogv" firstAttribute="centerX" secondItem="Lgo-jL-u5l" secondAttribute="centerX" id="8HC-ZT-hGB"/>
+                                    <constraint firstItem="QhK-uA-Ogv" firstAttribute="centerY" secondItem="Lgo-jL-u5l" secondAttribute="centerY" id="VQX-aH-ZBl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Lgo-jL-u5l" secondAttribute="trailing" id="CtX-sn-7Z8"/>
+                            <constraint firstItem="Lgo-jL-u5l" firstAttribute="top" secondItem="Rpu-Pr-x9m" secondAttribute="top" id="GEU-5N-gYH"/>
+                            <constraint firstAttribute="width" secondItem="Rpu-Pr-x9m" secondAttribute="height" multiplier="1:1" id="Jtx-vT-VQe"/>
+                            <constraint firstAttribute="bottom" secondItem="Lgo-jL-u5l" secondAttribute="bottom" id="uSL-uB-tb5"/>
+                            <constraint firstItem="Lgo-jL-u5l" firstAttribute="leading" secondItem="Rpu-Pr-x9m" secondAttribute="leading" id="ugk-GK-cfn"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-DH-2N0">
+                        <rect key="frame" x="16" y="144" width="139" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i2I-IK-Q5m">
+                        <rect key="frame" x="69.5" y="5.5" width="32" height="32.5"/>
+                        <color key="tintColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="32" id="Dcn-8c-q5G"/>
+                            <constraint firstAttribute="height" constant="32" id="Nod-bn-xxL"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="i2I-IK-Q5m" firstAttribute="centerY" secondItem="Lgo-jL-u5l" secondAttribute="top" id="0Mg-8Y-hmc"/>
+                <constraint firstItem="i2I-IK-Q5m" firstAttribute="centerX" secondItem="Lgo-jL-u5l" secondAttribute="centerX" id="2qX-HS-fGT"/>
+                <constraint firstItem="i2I-IK-Q5m" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="67w-5w-S5J"/>
+                <constraint firstItem="Rpu-Pr-x9m" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="CXE-Z3-fAb"/>
+                <constraint firstItem="Rpu-Pr-x9m" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="M18-2U-sCc"/>
+                <constraint firstItem="8ot-DH-2N0" firstAttribute="top" secondItem="Rpu-Pr-x9m" secondAttribute="bottom" constant="4" id="Whl-UP-Ktb"/>
+                <constraint firstItem="8ot-DH-2N0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="lcS-cX-62D"/>
+                <constraint firstAttribute="bottom" secondItem="8ot-DH-2N0" secondAttribute="bottom" id="nhW-R5-7Ig"/>
+                <constraint firstAttribute="trailing" secondItem="8ot-DH-2N0" secondAttribute="trailing" constant="16" id="rEY-zo-OOp"/>
+                <constraint firstAttribute="bottom" secondItem="8ot-DH-2N0" secondAttribute="bottom" id="ugI-9V-kfi"/>
+            </constraints>
+            <size key="customSize" width="162" height="159"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                    <size key="value" width="0.0" height="0.0"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                    <real key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="dateLabel" destination="8ot-DH-2N0" id="kgk-MH-cjd"/>
+                <outlet property="tempLabel" destination="QhK-uA-Ogv" id="Qup-CJ-3PO"/>
+            </connections>
+            <point key="canvasLocation" x="-92.028985507246389" y="70.982142857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
